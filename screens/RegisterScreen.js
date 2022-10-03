@@ -27,7 +27,7 @@ const RegisterScreen = ({ navigation }) => {
         .then((authUser) => {
             authUser.user.updateProfile({
                 displayName: name,
-                photoUrl:
+                photoURL:
                 imageUrl || 
                 "https://upload.wikimedia.org/wikipedia/commons/7/7e/Circle-icons-profile.svg"
             })
@@ -68,7 +68,7 @@ const RegisterScreen = ({ navigation }) => {
                     placeholder="Profile Picture URL (Optional)"
                     type="text"
                     value={imageUrl}
-                    onChange={(text) => setImageUrl(text)}
+                    onChange={(text) => setImageUrl(text.target.value)}
                     onSubmitEditing={register}
                 />
             </View>
