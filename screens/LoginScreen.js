@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar'
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native';
+import {
+    StyleSheet, Text, View,
+    KeyboardAvoidingView
+} from 'react-native';
 import { Image, Input, Button } from "react-native-elements";
-import { KeyboardAvoidingView } from 'react-native';
-//import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase';
 
 
@@ -15,7 +16,7 @@ const LoginScreen = ({ navigation }) => {
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((authUser) => {
             console.log(authUser)
-            if(authUser) {
+            if (authUser) {
                 navigation.replace("Home");
             }
         });
@@ -25,9 +26,9 @@ const LoginScreen = ({ navigation }) => {
 
     const signIn = () => {
         auth
-        .signInWithEmailAndPassword(email, password)
-        .catch((error) => alert(error));
-     }
+            .signInWithEmailAndPassword(email, password)
+            .catch((error) => alert(error));
+    }
 
 
     return (

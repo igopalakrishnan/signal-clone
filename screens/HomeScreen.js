@@ -1,8 +1,12 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react'
-import { ScrollView } from 'react-native'
-import { SafeAreaView } from 'react-native'
-import { TouchableOpacity } from 'react-native'
-import { StyleSheet, Text, View } from 'react-native'
+import {
+    ScrollView,
+    SafeAreaView,
+    TouchableOpacity,
+    StyleSheet,
+    Text,
+    View
+} from 'react-native'
 import { Avatar } from 'react-native-elements';
 import { AntDesign, SimpleLineIcons } from '@expo/vector-icons'
 import CustomListItem from '../components/CustomListItem'
@@ -64,12 +68,23 @@ const HomeScreen = ({ navigation }) => {
                 </View>
             )
         });
-    }, []);
+    }, [navigation]);
+
+    const enterChat = (id, chatName) => {
+        navigation.navigate("Chat", {
+            id,
+            chatName,
+        })
+    }
     return (
         <SafeAreaView>
             <ScrollView style={styles.container}>
                 {chats.map(({ id, data: { chatName } }) => (
-                    <CustomListItem key={id} id={id} chatName={chatName} />
+                    <CustomListItem key={id}
+                        id={id}
+                        chatName={chatName}
+                        enterChat={enterChat}
+                    />
                 ))}
 
             </ScrollView>
