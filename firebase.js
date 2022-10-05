@@ -3,12 +3,12 @@ import "firebase/compat/firestore";
 import "firebase/compat/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBhfLXBvHiQm_Z-HyEsYlL2o43N8hwuUq8",
-  authDomain: "signal-clone-7dd70.firebaseapp.com",
-  projectId: "signal-clone-7dd70",
-  storageBucket: "signal-clone-7dd70.appspot.com",
-  messagingSenderId: "771932868528",
-  appId: "1:771932868528:web:d951945c9fd8da150d1075"
+  apiKey: "AIzaSyD52GPmOk9fH4bFD1mNH94mUspZThbbB4E",
+  authDomain: "signal-clone-55678.firebaseapp.com",
+  projectId: "signal-clone-55678",
+  storageBucket: "signal-clone-55678.appspot.com",
+  messagingSenderId: "564751718412",
+  appId: "1:564751718412:web:a9ac1d856c61583d2d7629"
 };
 
 let app;

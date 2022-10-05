@@ -21,6 +21,7 @@ import firebase from 'firebase/compat/app';
 const ChatScreen = ({ navigation, route }) => {
     const [input, setInput] = useState("");
     const [messages, setMessages] = useState([]);
+  console.log(messages)
 
     useLayoutEffect(() => {
         navigation.setOptions({
@@ -75,6 +76,7 @@ const ChatScreen = ({ navigation, route }) => {
         })
     }, [navigation, messages]);
 
+
     const sendMessage = () => {
         Keyboard.dismiss();
 
@@ -106,6 +108,7 @@ const ChatScreen = ({ navigation, route }) => {
                 }))
             ))
         return unsubscribe;
+        
     }, [route])
 
     return (
@@ -147,7 +150,7 @@ const ChatScreen = ({ navigation, route }) => {
                                             </Text>
                                         </View>
                                     ) : (
-                                        <View style={styles.sender}>
+                                        <View key={id} style={styles.sender}>
                                             <Avatar
                                             position="absolute"
                                             rounded
